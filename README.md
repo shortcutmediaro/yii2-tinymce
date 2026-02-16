@@ -1,23 +1,15 @@
 yii2-tinymce
 ================
 
-这是 tinymce 在 yii2 的小部件。可以使用 elfinder 上传图片和文件。
-
-欢迎 issues 和 pull
-
-## 快速开始
-
-安装
-
 ```
-composer require --prefer-dist f2h2h1/yii2-tinymce
+composer require --prefer-dist shortcutmediaro/yii2-tinymce
 ```
 
 在视图里引用
 
 ```php
-echo \F2h2h1\Yii2Tinymce\TinyMCE::widget([
-    'tagId' => 'tinymceid', // 这是 tinymce 标签的 id
+echo \Shortcutmediaro\Yii2Tinymce\TinyMCE::widget([
+    'tagId' => 'tinymceid', // tinymce tag id
 ]);
 ```
 
