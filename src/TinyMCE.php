@@ -154,12 +154,13 @@ class TinyMCE extends Widget
             // undo redo | image | styleselect | bold italic | alignleft aligncenter alignright alignjustify | table
             $toolbar = [
                 ['undo', 'redo'],
-                ['image'],
+                ['image', 'link'],
                 ['styleselect'],
                 ['bold', 'italic'],
                 ['alignleft', 'aligncenter', 'alignright', 'alignjustify'],
-                ['table'],
-                ['preview'],
+                ['hr', 'emoticons'],
+                ['searchreplace'],
+                ['code'],
             ];
         }
 
