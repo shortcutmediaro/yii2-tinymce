@@ -1,6 +1,6 @@
 <?php
 
-namespace F2h2h1\Yii2Tinymce;
+namespace Shortcutmediaro\Yii2Tinymce;
 
 use Yii;
 use yii\base\Model;
@@ -151,7 +151,7 @@ class TinyMCE extends Widget
     public static function tinyMCEToolbar($toolbar = null)
     {
         if ($toolbar === null) {
-            // undo redo | image | styleselect | bold italic | alignleft aligncenter alignright alignjustify | table 
+            // undo redo | image | styleselect | bold italic | alignleft aligncenter alignright alignjustify | table
             $toolbar = [
                 ['undo', 'redo'],
                 ['image'],
@@ -256,23 +256,16 @@ class TinyMCE extends Widget
         foreach ($this->options as $key => $item) {
             $init .= sprintf("%s: '%s',", $key, $item);
         }
-        $init .= <<<EOF
-            content_style: ".ty-float-right { float: right; } .ty-float-left { float: left; }",
-            image_class_list: [
-                { title: 'None', value: '' },
-                { title: 'Left', value: 'ty-float-left' },
-                { title: 'Right', value: 'ty-float-right' }
-            ],
-        EOF;
         if (count($this->elfinder) > 0) {
             if (empty($this->elfinder['url'])) {
                 return 'missing elfinder connector url';
             }
             list(, $path) = Yii::$app->assetManager->publish(__DIR__);
             $view->registerJsFile($path.'/tinymceElfinder.js');
-            $init .= sprintf("%s: %s,", 'file_picker_callback', 'mceElf.browser');
+            $ientifier = str_replace('-', '_',$this->getId());
+            $init .= sprintf("%s: %s,", 'file_picker_callback', $ientifier.'.browser');
             // $init .= sprintf("%s: %s,", 'images_upload_handler', 'mceElf.uploadHandler');
-            $js .= 'const mceElf = new tinymceElfinder('.json_encode($this->elfinder).');';
+            $js .= 'const '.$ientifier.' = new tinymceElfinder('.json_encode($this->elfinder).');';
         }
 
         $js .= 'tinymce.init({'.$init.'});';
