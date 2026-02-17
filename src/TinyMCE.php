@@ -157,6 +157,7 @@ class TinyMCE extends Widget
                 ['image', 'link'],
                 ['styleselect'],
                 ['bold', 'italic'],
+                ['numlist', 'bullist'],
                 ['alignleft', 'aligncenter', 'alignright', 'alignjustify'],
                 ['hr', 'emoticons'],
                 ['searchreplace'],
