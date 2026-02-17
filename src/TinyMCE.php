@@ -155,13 +155,10 @@ class TinyMCE extends Widget
             $toolbar = [
                 ['undo', 'redo'],
                 ['image', 'link'],
-                ['styleselect'],
                 ['bold', 'italic'],
                 ['numlist', 'bullist'],
                 ['alignleft', 'aligncenter', 'alignright', 'alignjustify'],
-                ['hr', 'emoticons'],
-                ['searchreplace'],
-                ['code'],
+                ['emoticons', 'searchreplace', 'code'],
             ];
         }
 
